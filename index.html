@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>Cricket App</title>
-  <!-- Not present in the tutorial. Just for basic styling. -->
   <link rel="stylesheet" href="css/base.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
@@ -14,59 +13,14 @@
 <body>
   <div id="content"></div>
   <script type="text/babel">
-  // To get started with this tutorial running your own code, simply remove
-  // the script tag loading scripts/example.js and start writing code here.
-  var CommentList = React.createClass({
+  var Team = React.createClass ({
     render: function () {
-      var commentNode = this.props.data.map(function(comment) {
-        return (
-          <Comment author={comment.author} key={comment.id} >{comment.text}</Comment>
-        );
-      });
-      return (<div className="commentList">
-      {commentNode}
-      </div>);
+      return (<center>
+        <h2>Indian Cricket Team</h2>
+      </center>);
     }
   });
-
-  var CommentForm = React.createClass({
-    render: function() {
-      return (<div className="commentForm">
-      <h1>This is the Commentform</h1>
-      </div>);
-    }
-  });
-
-  var Comment = React.createClass({
-    render: function () {
-      return (<div className="comment">
-      <h1 className="commentAuthor">
-      {this.props.author}
-      </h1>
-      <h1>
-      {this.props.children}
-      </h1>
-      </div>);
-    }
-  });
-
-  var data = [
-    {id: 1, author: "Balaji", text: "This is Balaji"},
-    {id: 2, author: "Marx", text: "This is Marx"}
-  ];
-
-  var CommentBox = React.createClass({
-    render: function () {
-
-      return (<div className="commentBox">
-      <h1>This is the Comment Box</h1>
-      <CommentList data={this.props.data} />
-      <CommentForm />
-      </div>);
-    }
-  });
-
-  ReactDOM.render(<CommentBox data={data} />,document.getElementById("content"));
+  ReactDOM.render(<Team />,document.getElementById("content"));
   </script>
 </body>
 </html>
