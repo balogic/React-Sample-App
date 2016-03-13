@@ -18,10 +18,27 @@
       // the script tag loading scripts/example.js and start writing code here.
       var CommentBox = React.createClass({
         render: function() {
-          return (<div className="commentBox"><h1>This is awesome</h1></div>);
+          return (<div className="commentBox"><h1>This is Comment Box</h1></div>);
         }
       });
       ReactDOM.render(<CommentBox/>,document.getElementById("content"));
+
+      var CommentList = React.createClass({
+        render: function (){
+          return (<div className="commentList">
+            <h1>This is the Comment List</h1>
+          </div>);
+        }
+      });
+
+      var CommentForm = React.createClass ({
+        render: function () {
+          return (<div className="commentList">
+          <h1>This is the Commentform</h1>
+        </div>);
+        }
+      });
+
     </script>
   </body>
 </html>
