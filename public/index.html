@@ -16,29 +16,35 @@
     <script type="text/babel">
       // To get started with this tutorial running your own code, simply remove
       // the script tag loading scripts/example.js and start writing code here.
-      var CommentBox = React.createClass({
-        render: function() {
-          return (<div className="commentBox"><h1>This is Comment Box</h1></div>);
-        }
-      });
-      ReactDOM.render(<CommentBox/>,document.getElementById("content"));
-
       var CommentList = React.createClass({
-        render: function (){
+        render: function () {
           return (<div className="commentList">
-            <h1>This is the Comment List</h1>
+          <h1>This is the Comment List</h1>
           </div>);
         }
       });
 
-      var CommentForm = React.createClass ({
-        render: function () {
-          return (<div className="commentList">
+      var CommentForm = React.createClass({
+        render: function() {
+          return (<div className="commentForm">
           <h1>This is the Commentform</h1>
         </div>);
         }
       });
 
+      var CommentBox = React.createClass({
+        render: function () {
+
+          return (<div className="commentBox">
+          <h1>This is the Comment Box</h1>
+          <CommentList />
+          <CommentForm />
+          </div>);
+
+        }
+      });
+
+      ReactDOM.render(<CommentBox />,document.getElementById("content"));
     </script>
   </body>
 </html>
