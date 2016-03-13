@@ -13,14 +13,44 @@
 <body>
   <div id="content"></div>
   <script type="text/babel">
+  var PlayerList = React.createClass ({
+    render: function () {
+      var playerNodes = this.props.data.map(function(player) {
+        return (
+          <Player names={player.names} key={player.id}>Category:{player.category}<br />Runs:{player.runs}<br />Wickets:{player.wickets}</Player>
+        );
+      });
+      return (<div className="playerList">
+      {playerNodes}
+      </div>);
+    }
+  });
+
+var Player = React.createClass ({
+  render: function () {
+    return (<div className="player">
+    <h3 className="playerName">
+    Name:{this.props.names}<br />
+    {this.props.children}
+    </h3>
+  </div>);
+  }
+});
+
+var data = [
+  {id: 1, names:"Balaji", category: "Batsman", runs: 2345, wickets: 45},
+  {id: 2, names: "Deva", category: "Bowler", runs: 4567, wickets: 67}
+];
+
   var Team = React.createClass ({
     render: function () {
       return (<center>
         <h2>Indian Cricket Team</h2>
+        <PlayerList data={this.props.data} />
       </center>);
     }
   });
-  ReactDOM.render(<Team />,document.getElementById("content"));
+  ReactDOM.render(<Team data={data} />,document.getElementById("content"));
   </script>
 </body>
 </html>
